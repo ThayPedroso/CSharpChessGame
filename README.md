@@ -25,6 +25,11 @@
 
 Console Chess Game - é uma forma de aplicar conceitos aprendidos em C#.
 
+### Camadas do sistema
+- Superior -> Camada de Aplicação: Aplicativo propriamente dita. Interage com o usuário e consome as outras duas camadas.
+- Meio -> Camada Jogo de Xadrez: Regras do jogo de xadrez, movimentação das peças.
+- Inferior -> Camada Tabuleiro: contém peças, posição, cor da peça. Representação do tabuleiro e operações básicas.   
+
 ---
 
 ## :woman: Autora
