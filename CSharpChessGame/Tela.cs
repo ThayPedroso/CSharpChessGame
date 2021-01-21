@@ -13,6 +13,11 @@ namespace CSharpChessGame
             Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
             Console.WriteLine();
             Tela.imprimirTabuleiro(partida.tab);
+            Console.WriteLine();
+            if (partida.xeque)
+            {
+                Console.WriteLine("XEQUE!");
+            }
             imprimirPecasCapturadas(partida);
         }
 
