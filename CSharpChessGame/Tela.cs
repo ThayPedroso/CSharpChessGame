@@ -9,14 +9,25 @@ namespace CSharpChessGame
     {
         public static void imprimirPartida(PartidaDeXadrez partida)
         {
-            Console.WriteLine("Turno: " + partida.turno);
-            Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+            if (!partida.terminada)
+            {
+                Console.WriteLine("Turno: " + partida.turno);
+                Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+            }
             Console.WriteLine();
             Tela.imprimirTabuleiro(partida.tab);
             Console.WriteLine();
-            if (partida.xeque)
+            if (!partida.terminada)
             {
-                Console.WriteLine("XEQUE!");
+                if (partida.xeque)
+                {
+                    Console.WriteLine("XEQUE!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("XEQUEMATE!");
+                Console.WriteLine("Vendcedor: " + partida.jogadorAtual);
             }
             imprimirPecasCapturadas(partida);
         }

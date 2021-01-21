@@ -42,8 +42,10 @@ namespace CSharpChessGame
                         Console.ReadLine();
                     }
                 }
+                Console.Clear();
+                Tela.imprimirPartida(partida);
 
-                Tela.imprimirTabuleiro(partida.tab);
+                //Tela.imprimirTabuleiro(partida.tab);
             }
             catch (TabuleiroException e)
             {
