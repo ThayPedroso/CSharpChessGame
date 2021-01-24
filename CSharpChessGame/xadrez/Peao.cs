@@ -22,7 +22,6 @@ namespace xadrez
 
         private bool livre(Posicao pos)
         {
-            Peca p = tab.peca(pos);
             return tab.peca(pos) == null;
         }
 
@@ -40,7 +39,8 @@ namespace xadrez
                     mat[pos.linha, pos.coluna] = true;
                 }
                 pos.definirValores(posicao.linha - 2, posicao.coluna);
-                if (tab.posicaoValida(pos) && livre(pos) && qtdMovimentos == 0)
+                Posicao pos2 = new Posicao(posicao.linha - 1, posicao.coluna);
+                if (tab.posicaoValida(pos2) && livre(pos2) && tab.posicaoValida(pos) && livre(pos) && qtdMovimentos == 0)
                 {
                     mat[pos.linha, pos.coluna] = true;
                 }
@@ -63,7 +63,8 @@ namespace xadrez
                     mat[pos.linha, pos.coluna] = true;
                 }
                 pos.definirValores(posicao.linha + 2, posicao.coluna);
-                if (tab.posicaoValida(pos) && livre(pos) && qtdMovimentos == 0)
+                Posicao pos2 = new Posicao(posicao.linha + 1, posicao.coluna);
+                if (tab.posicaoValida(pos2) && livre(pos2) && tab.posicaoValida(pos) && livre(pos) && qtdMovimentos == 0)
                 {
                     mat[pos.linha, pos.coluna] = true;
                 }

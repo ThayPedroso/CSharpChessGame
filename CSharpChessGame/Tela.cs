@@ -9,16 +9,14 @@ namespace CSharpChessGame
     {
         public static void imprimirPartida(PartidaDeXadrez partida)
         {
-            if (!partida.terminada)
-            {
-                Console.WriteLine("Turno: " + partida.turno);
-                Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
-            }
-            Console.WriteLine();
             Tela.imprimirTabuleiro(partida.tab);
             Console.WriteLine();
+            imprimirPecasCapturadas(partida);
+            Console.WriteLine();
+            Console.WriteLine("Turno: " + partida.turno);
             if (!partida.terminada)
             {
+                Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
                 if (partida.xeque)
                 {
                     Console.WriteLine("XEQUE!");
@@ -27,9 +25,8 @@ namespace CSharpChessGame
             else
             {
                 Console.WriteLine("XEQUEMATE!");
-                Console.WriteLine("Vendcedor: " + partida.jogadorAtual);
+                Console.WriteLine("Vencedor: " + partida.jogadorAtual);
             }
-            imprimirPecasCapturadas(partida);
         }
 
         // Lembrete: métodos estáticos pertencem à classe e não aos objetos da classe
